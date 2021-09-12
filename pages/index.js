@@ -1,11 +1,9 @@
-import Head from "next/head";
+import Meta from "../components/Meta";
 
 export default function Home() {
   return (
     <div>
-        <Head>
-            <title>Hurture.com</title>
-        </Head>
+        <Meta/>
       <h1>Welcome to Next</h1>
     </div>
   )
