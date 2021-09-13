@@ -1,6 +1,6 @@
-import PostList from '../components/posts/PostsList'
+import PostsList from '../../components/posts/PostsList'
+const PostsPage = () => {
 
-const HomePage = () => {
     const DummyPost = [
         {
             id: "post-1",
@@ -15,12 +15,12 @@ const HomePage = () => {
             description: "amazing Post 2",
         }
     ]
+
     return(
-        <>
-            <h1>The Homepage</h1>
-            <PostList post={DummyPost}/>
-        </>
+        <div>
+            <h1>A Page just with the newest posts</h1>
+            <PostsList post={DummyPost}/>
+        </div>
     )
 }
-
-export default HomePage;
+export default PostsPage;
