@@ -1,15 +1,16 @@
-import PostItem from '../posts/PostItem'
+import PostItem from './PostItem'
 
 const PostsList = (props) => {
     return(
         <ul>
-            {props.post.map((post) => (
+            {props.posts.map((post) => (
                 <PostItem
                     key={post.id}
                     id={post.id}
                     image={post.imgUrl}
                     title={post.title}
-                    description={post.description}
+                    question={post.question}
+                    tag={post.tag}
                 />
             ))}
         </ul>

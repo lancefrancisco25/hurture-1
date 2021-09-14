@@ -6,11 +6,9 @@ function PostItem(props) {
                     <img src={props.imgUrl} alt={props.title} />
                 </div>
                 <div>
+                    <p>{props.tag}</p>
                     <h3>{props.title}</h3>
-                    <p>{props.description}</p>
-                </div>
-                <div>
-                    <button>Show Details</button>
+                    <p>{props.question}</p>
                 </div>
             </div>
         </li>

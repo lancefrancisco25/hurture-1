@@ -1,26 +1,41 @@
 import PostList from '../components/posts/PostsList'
+import DummyPosts from '../components/DummyPosts.json';
+import {useState} from 'react';
+import Modal from 'react-modal'
+import CreateNewPost from '../components/posts/CreateNewPost'
+import Header from '../components/Header';
+import HomePageS from '../styles/HomePage.module.css'
 
 const HomePage = () => {
-    const DummyPost = [
-        {
-            id: "post-1",
-            title: "Our first post",
-            imgUrl: "https://cdn.pixabay.com/photo/2015/04/20/13/10/woman-731140_1280.jpg",
-            description: "amazing Post",
-        },
-        {
-            id: "post-2",
-            title: "Our second post",
-            imgUrl: "https://cdn.pixabay.com/photo/2015/04/20/13/10/woman-731140_1280.jpg",
-            description: "amazing Post 2",
-        }
-    ]
+
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
+    const setModalIsOpenToTrue =()=>{
+        setModalIsOpen(true)
+    }
+
+    const setModalIsOpenToFalse =()=>{
+        setModalIsOpen(false)
+    }
+
+    const addPostHandler = (enteredData) => {
+        console.log(enteredData)
+    }
+
     return(
         <>
-            <h1>The Homepage</h1>
-            <PostList post={DummyPost}/>
+            <Header/>
+            <div>
+                <button onClick={setModalIsOpenToTrue}>Click to Open Modal</button>
+                <PostList posts={DummyPosts}/>
+
+                <Modal isOpen={modalIsOpen} className={HomePageS.Modal} overlayClassName={HomePageS.Overlay} >
+                    <button onClick={setModalIsOpenToFalse}>x</button>
+                    <CreateNewPost onAddQuestion={addPostHandler}/>
+                </Modal>
+            </div>
         </>
     )
-}
+};
 
 export default HomePage;
