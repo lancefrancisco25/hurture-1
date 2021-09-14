@@ -4,8 +4,12 @@ import {useState} from 'react';
 import ReactModal from 'react-modal'
 import CreateNewPost from '../components/posts/CreateNewPost'
 import Header from '../components/Header';
+import Meta from '../components/Meta';
 import HomePageS from '../styles/HomePage.module.css';
 import ModalS from '../styles/Modal.module.css'
+import LeftBar from '../components/leftbar'
+import CenterBar from '../components/centerbar'
+import RightBar from '../components/rightbar'
 
 const HomePage = () => {
 
@@ -25,21 +29,28 @@ const HomePage = () => {
 
     return(
         <>
+            <Meta/>
             <Header/>
-            <div>
-                <button onClick={setModalIsOpenToTrue}>Click to Open Modal</button>
-                <PostList posts={DummyPosts}/>
+            <ReactModal isOpen={modalIsOpen} contentLabel="onRequestClose Example" onRequestClose={setModalIsOpenToFalse} className={ModalS.content} overlayClassName={ModalS.overlay}>
+                <button onClick={setModalIsOpenToFalse}>x</button>
+                <CreateNewPost onAddQuestion={addPostHandler}/>
+            </ReactModal>
+            <div className={HomePageS.contentCenter}>
+                <div className={HomePageS.grid}>
 
-                <ReactModal
-                    isOpen={modalIsOpen}
-                    contentLabel="onRequestClose Example"
-                    onRequestClose={setModalIsOpenToFalse}
-                    className={ModalS.content}
-                    overlayClassName={ModalS.overlay}
-                >
-                    <button onClick={setModalIsOpenToFalse}>x</button>
-                    <CreateNewPost onAddQuestion={addPostHandler}/>
-                </ReactModal>
+                    <div className={`${HomePageS.sideBarLeft} borderShadow`}>
+                        <LeftBar/>
+                    </div>
+
+                    <div className={`${HomePageS.centerPost} borderShadow`}>
+                        <CenterBar setModalIsOpenToTrue={setModalIsOpenToTrue}/>
+                    </div>
+
+                    <div className={`${HomePageS.sideBarRight} borderShadow`}>
+                        <RightBar/>
+                    </div>
+
+                </div>
             </div>
         </>
     )
