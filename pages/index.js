@@ -1,10 +1,11 @@
 import PostList from '../components/posts/PostsList'
 import DummyPosts from '../components/DummyPosts.json';
 import {useState} from 'react';
-import Modal from 'react-modal'
+import ReactModal from 'react-modal'
 import CreateNewPost from '../components/posts/CreateNewPost'
 import Header from '../components/Header';
-import HomePageS from '../styles/HomePage.module.css'
+import HomePageS from '../styles/HomePage.module.css';
+import ModalS from '../styles/Modal.module.css'
 
 const HomePage = () => {
 
@@ -29,10 +30,16 @@ const HomePage = () => {
                 <button onClick={setModalIsOpenToTrue}>Click to Open Modal</button>
                 <PostList posts={DummyPosts}/>
 
-                <Modal isOpen={modalIsOpen} className={HomePageS.Modal} overlayClassName={HomePageS.Overlay} >
+                <ReactModal
+                    isOpen={modalIsOpen}
+                    contentLabel="onRequestClose Example"
+                    onRequestClose={setModalIsOpenToFalse}
+                    className={ModalS.content}
+                    overlayClassName={ModalS.overlay}
+                >
                     <button onClick={setModalIsOpenToFalse}>x</button>
                     <CreateNewPost onAddQuestion={addPostHandler}/>
-                </Modal>
+                </ReactModal>
             </div>
         </>
     )

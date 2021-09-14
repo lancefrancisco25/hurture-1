@@ -7,7 +7,12 @@
     align-items: center;
     background: white;
     position: fixed;
-    z-index:1000;
+    z-index:2;
+}
+
+.spacer{
+    width: 100%;
+    height: 95px;
 }
   
 .header .grid{
@@ -24,7 +29,6 @@
 }
 
 .headlogo h1{
-  font-size: 21px;
   font-size: 21px;
   margin-left: 10px;
 }

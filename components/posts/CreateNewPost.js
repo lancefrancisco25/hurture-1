@@ -31,7 +31,7 @@ const CreateNewPost = ({props}) => {
                 <TextField
                     id="outlined-full-width"
                     label="Label"
-                    style={{ margin: 20 , width: 500}}
+                    style={{ width: 200, height: 300}}
                     placeholder="Add a Title (required)"
                     helperText="Full width!"
                     margin="normal"
