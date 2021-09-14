@@ -1,0 +1,23 @@
+.footerCont{
+    padding: 15px 30px;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.footerCont a{
+    font-size: 14px;
+    color: #686868;
+    padding-right: 12px;
+    margin: 2px 0;
+}
+
+.footerHurture{
+    font-weight: 600;
+    color: #FFAA00; 
+    font-size: 14px;
+    padding-right: 12px;
+    margin: 5px 0;
+}

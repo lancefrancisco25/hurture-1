@@ -7,9 +7,9 @@ import Header from '../components/Header';
 import Meta from '../components/Meta';
 import HomePageS from '../styles/HomePage.module.css';
 import ModalS from '../styles/Modal.module.css'
-import LeftBar from '../components/leftbar'
-import CenterBar from '../components/centerbar'
-import RightBar from '../components/rightbar'
+import LeftBar from '../components/Homepage/leftbar'
+import CenterBar from '../components/Homepage/centerbar'
+import RightBar from '../components/Homepage/rightbar'
 
 const HomePage = () => {
 
@@ -46,7 +46,7 @@ const HomePage = () => {
                         <CenterBar setModalIsOpenToTrue={setModalIsOpenToTrue}/>
                     </div>
 
-                    <div className={`${HomePageS.sideBarRight} borderShadow`}>
+                    <div className={`${HomePageS.sideBarRight}`}>
                         <RightBar/>
                     </div>
 
