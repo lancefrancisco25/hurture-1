@@ -23,23 +23,36 @@ const CreateNewPost = ({props}) => {
             tag: enteredTag,
         };
 
-        props.onAddQuestion(enteredData);
+        props.onAddQuestion(postData);
     }
     return (
         <>
             <form onSubmit={submitHandler} >
+                <div>
+                    <h2>Create A New Post</h2>
                 <TextField
                     id="outlined-full-width"
-                    label="Label"
-                    style={{ width: 200, height: 300}}
+                    style={{marginBottom: 20, marginTop: 20,}}
+                    fullWidth
                     placeholder="Add a Title (required)"
-                    helperText="Full width!"
-                    margin="normal"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
+                    label="Title"
+                    InputLabelProps={{shrink: true,}}
+                    variant="outlined"
+                    autoFocus={true}
+                />
+                <TextField
+                    id="outlined-multiline-static"
+                    style={{marginBottom: 40, marginTop: 20, }}
+                    fullWidth
+                    multiline
+                    rows={8}
+                    label="Your Question"
+                    InputLabelProps={{shrink: true,}}
+                    placeholder="Type ur question or whatever"
                     variant="outlined"
                 />
+                    <hr/>
+                </div>
             </form>
         </>
     )

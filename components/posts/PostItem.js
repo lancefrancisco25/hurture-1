@@ -1,7 +1,8 @@
+import PostItemS from '../../styles/PostItem.module.css'
 function PostItem(props) {
     return (
         <li>
-            <div>
+            <div className={`${PostItemS.container} borderShadow`}>
                 <div>
                     <img src={props.imgUrl} alt={props.title} />
                 </div>

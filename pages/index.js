@@ -1,15 +1,14 @@
-import PostList from '../components/posts/PostsList'
-import DummyPosts from '../components/DummyPosts.json';
 import {useState} from 'react';
 import ReactModal from 'react-modal'
 import CreateNewPost from '../components/posts/CreateNewPost'
 import Header from '../components/Header';
 import Meta from '../components/Meta';
+import MenuBar from '../components/Homepage/MenuBar'
+import PostSection from '../components/Homepage/PostSection'
+import BuddyBar from '../components/Homepage/BuddyBar'
 import HomePageS from '../styles/HomePage.module.css';
 import ModalS from '../styles/Modal.module.css'
-import LeftBar from '../components/Homepage/leftbar'
-import CenterBar from '../components/Homepage/centerbar'
-import RightBar from '../components/Homepage/rightbar'
+import GridS from '../styles/grid.module.css'
 
 const HomePage = () => {
 
@@ -35,19 +34,19 @@ const HomePage = () => {
                 <button onClick={setModalIsOpenToFalse}>x</button>
                 <CreateNewPost onAddQuestion={addPostHandler}/>
             </ReactModal>
-            <div className={HomePageS.contentCenter}>
-                <div className={HomePageS.grid}>
+            <div className={HomePageS.contentContainer}>
+                <div className={GridS.grid}>
 
-                    <div className={`${HomePageS.sideBarLeft} borderShadow`}>
-                        <LeftBar/>
+                    <div className={`${HomePageS.menuBar} borderShadow`}>
+                        <MenuBar/>
                     </div>
 
-                    <div className={`${HomePageS.centerPost} borderShadow`}>
-                        <CenterBar setModalIsOpenToTrue={setModalIsOpenToTrue}/>
+                    <div className={`${HomePageS.postsSection} `}>
+                        <PostSection setModalIsOpenToTrue={setModalIsOpenToTrue}/>
                     </div>
 
-                    <div className={`${HomePageS.sideBarRight}`}>
-                        <RightBar/>
+                    <div className={HomePageS.buddyBar}>
+                        <BuddyBar/>
                     </div>
 
                 </div>

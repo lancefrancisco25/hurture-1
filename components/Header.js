@@ -1,14 +1,14 @@
 import Image from 'next/image'
 import Logo from '../public/logo-02.png'
 import headS from '../styles/Header.module.css'
-
+import gridS from '../styles/grid.module.css'
 
 const Header = () => {
     return (
         <>
             <header className={headS.header}>
-              <div className="grid">
-                <div className={headS.headlogo}> <Image className={headS.headlogoimg} width={40} height={40}src={Logo} alt="Picture of the author"/>
+              <div className={gridS.grid}>
+                <div className={headS.headlogo}> <Image className={headS.headlogoimg} width={40} height={40} src={Logo} alt="Picture of the author"/>
                   <h1>Hurture</h1>
                 </div>
                 <div className={headS.searchbar}>
