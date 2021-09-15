@@ -1,5 +1,5 @@
 import PostList from '../posts/PostsList'
-import DummyPosts from '../DummyPosts.json';
+import DummyPosts from '../DummyJsonFiles/DummyPosts.json';
 
 function postSection({setModalIsOpenToTrue}) {
     return (

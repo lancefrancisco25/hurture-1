@@ -1,0 +1,7 @@
+.container{
+    padding: 3%;
+    display: flex;
+    align-items: center;
+    height: 5vh;
+    margin: 2%;
+}

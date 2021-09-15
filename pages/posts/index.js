@@ -1,5 +1,5 @@
 import PostsList from '../../components/posts/PostsList'
-import DummyPosts from '../../components/DummyPosts.json';
+import DummyPosts from '../../components/DummyJsonFiles/DummyPosts.json';
 const PostsPage = () => {
 
     return(

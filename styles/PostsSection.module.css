@@ -1,0 +1,5 @@
+.container {
+    grid-column-start: 3;
+    grid-column-end: 10;
+    position: relative;
+}

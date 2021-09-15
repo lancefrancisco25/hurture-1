@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Arts"
+  },
+  {
+    "id": 2,
+    "name": "Dancing"
+  },
+  {
+    "id": 3,
+    "name": "Cooking"
+  },
+  {
+    "id": 4,
+    "name": "Music"
+  },
+  {
+    "id": 5,
+    "name": "Gaming"
+  },
+  {
+    "id": 6,
+    "name": "Coding"
+  },
+  {
+    "id": 7,
+    "name": "Programming"
+  }
+]
